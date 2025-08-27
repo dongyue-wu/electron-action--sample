@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build:dev": "pnpm --filter @next-agent/desktop-frontend build:dev && pnpm --filter @next-agent/desktop-backend desktop:build:msix"
+    "build:dev": "pnpm --filter @next-agent/desktop-frontend build:dev && pnpm --filter @next-agent/desktop-backend desktop:build:msix",
+    "install-certificate": "pnpm --filter @next-agent/desktop-backend fix-certificate"
   },
   "dependencies": {
     "zod": "^3.23.8"
