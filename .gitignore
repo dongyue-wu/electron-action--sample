@@ -1,0 +1,26 @@
+**/node_modules
+.DS_Store
+.pytest_cache
+.next
+.turbo
+**/venv
+**/__pycache__
+logs
+.idea
+tmp
+# Ignore all .env files except .env.example
+.env.*
+!.env.example
+
+tsconfig.tsbuildinfo
+
+.env
+
+
+**/debug/*.json
+**/debug/**/*.yaml
+
+# Sentry Config File
+.env.sentry-build-plugin
+
+

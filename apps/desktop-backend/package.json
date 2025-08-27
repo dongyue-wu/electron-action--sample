@@ -1,0 +1,33 @@
+{
+  "name": "@next-agent/desktop-backend",
+  "displayName": "Manus",
+  "description": "The official Manus Windows app",
+  "version": "1.0.22",
+  "private": false,
+  "license": "MIT",
+  "author": {
+    "name": "manus"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "desktop:build:msix": "run-s prebuild build:backend dist:unpack make-msix fix-certificate",
+    "prebuild": "rimraf dist out",
+    "build:backend": "tsc -p backend",
+    "dist:unpack": "electron-builder --config electron-builder-msix.yml --win",
+    "make-msix": "node make-msix.js",
+    "fix-certificate": "force-fix-certificate.bat",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "app-root-path": "^3.1.0",
+    "electron-log": "^5.4.0",
+    "sc-prepare-next": "^1.0.3",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "electron": "^34.5.7",
+    "electron-builder": "^26.0.12",
+    "rimraf": "^6.0.1",
+    "npm-run-all": "^4.1.5"
+  }
+}

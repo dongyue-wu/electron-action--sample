@@ -1,0 +1,63 @@
+appId: im.manus.desktop
+electronVersion: 34.5.7
+asar: true
+productName: 'Manus'
+
+extraMetadata:
+  main: dist/index.js
+  name: 'Manus'
+  productName: 'Manus'
+  description: 'The official Manus Windows app'
+
+extraResources:
+  - from: 'msix/assets/icon.png'
+    to: 'icon.png'
+  - from: 'msix/assets/icon.ico'
+    to: 'icon.ico'
+
+files:
+  - msix/assets/**/*
+  - dist
+  - frontend/out
+
+directories:
+  output: dist  # 对于 --dir 模式，输出到 dist
+
+protocols:
+  - name: 'Manus'
+    schemes:
+      - manus
+
+win:
+  artifactName: ${name}-${version}-windows-${arch}.${ext}
+  icon: 'msix/assets/icon-win.ico'
+  executableName: 'Manus'
+  target:
+    - target: dir
+      arch: ['x64']
+
+nsis:
+  artifactName: ${name}-${version}-windows-${arch}-nsis-installer.${ext}
+  allowToChangeInstallationDirectory: true
+  oneClick: false
+  perMachine: true
+  shortcutName: 'Manus'
+  include: installer.nsh
+
+mac:
+  target: dmg
+  artifactName: ${productName}-Setup-${version}.${ext}
+  darkModeSupport: true
+  signIgnore: null
+  extendInfo:
+    CFBundleURLTypes:
+      - CFBundleURLName: manus
+        CFBundleURLSchemes:
+          - manus
+
+linux:
+  target:
+    - AppImage
+    - deb
+  icon: ./msix/assets/icon.ico
+  artifactName: ${productName}-Setup-${version}.${ext} 

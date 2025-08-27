@@ -1,0 +1,79 @@
+appId: im.manus.desktop
+electronVersion: 34.5.7
+asar: true
+productName: 'Manus'
+
+extraMetadata:
+  main: dist/index.js
+  name: 'Manus'
+  productName: 'Manus'
+  description: 'The official Manus Windows app'
+
+extraResources:
+  - from: 'msix/assets/icon.png'
+    to: 'icon.png'
+  - from: 'msix/assets/icon.ico'
+    to: 'icon.ico'
+
+files:
+  - msix/assets/**/*
+  - dist
+  - frontend/out
+
+directories:
+  buildResources: dist
+  output: out
+
+protocols:
+  - name: 'Manus'
+    schemes:
+      - manus
+
+win:
+  artifactName: ${name}-${version}-windows-${arch}.${ext}
+  icon: 'msix/assets/icon-win.ico'
+  executableName: 'Manus'
+  target:
+    - target: nsis
+      arch: ['x64']
+    - target: appx
+      arch: ['x64', 'arm64']
+
+appx:
+  applicationId: im.manus.desktop
+  backgroundColor: 'transparent'
+  displayName: 'manus'
+  publisherDisplayName: 'Manus AI'
+  publisher: CN=845AA9DF-1559-4AA0-8A94-CE74FEB6A77B
+  identityName: ManusAI.Manus
+  artifactName: ${name}-${version}-windows-${arch}.msix
+  languages: ['en-US']
+  addAutoLaunchExtension: false
+  showNameOnTiles: false
+  minVersion: '10.0.17763.0'
+
+nsis:
+  artifactName: ${name}-${version}-windows-${arch}-nsis-installer.${ext}
+  allowToChangeInstallationDirectory: true
+  oneClick: false
+  perMachine: true
+  shortcutName: 'Manus'
+  include: installer.nsh
+
+mac:
+  target: dmg
+  artifactName: ${productName}-Setup-${version}.${ext}
+  darkModeSupport: true
+  signIgnore: null
+  extendInfo:
+    CFBundleURLTypes:
+      - CFBundleURLName: manus
+        CFBundleURLSchemes:
+          - manus
+
+linux:
+  target:
+    - AppImage
+    - deb
+  icon: ./msix/assets/icon.ico
+  artifactName: ${productName}-Setup-${version}.${ext}

@@ -1,0 +1,33 @@
+{
+  "name": "pnpm-mono",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:dev": "pnpm --filter @next-agent/desktop-frontend build:dev && pnpm --filter @next-agent/desktop-backend desktop:build:msix"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "concurrently": "^9.2.0",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^2.0.4",
+    "wait-on": "^8.0.4"
+  },
+  "packageManager": "pnpm@10.0.0-rc.0+sha512.bce495587126f9a37d64150bf80dcf9bd96f0d64cfd450c9b1a7e5bf2cfc81aef3d50178f259855351c872905a240861a55031652c81e8a11665bfa65f6a1dc2",
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": ">=9.x"
+      }
+    }
+  }
+}
