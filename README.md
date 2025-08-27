@@ -1,6 +1,7 @@
 # Environment Setup
 
 Install Node.js (v20.19.4) and pnpm
+
 TIP: Recommend using nvm to manage Node.js versions (https://github.com/nvm-sh/nvm)
 
 # Getting Started
