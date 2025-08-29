@@ -9,12 +9,7 @@
       "inputTypes": [
         {
           "name": "File",
-          "kind": "File",
-          "where": {
-              "extension": [
-                ".html", ".xml",  ".txt",  ".yaml", ".yml", ".md"
-             ]
-          }
+          "kind": "File"
         }
       ],
       "outputTypes": [],
@@ -25,10 +20,7 @@
       "inputCombinations": [
         {
           "inputs": ["File"],
-          "description": "Send path",
-          "where": [
-            "${File.Extension} ~= \".html\" || ${File.Extension} ~= \".xml\" || ${File.Extension} ~= \".txt\" || ${File.Extension} ~= \".yaml\" || ${File.Extension} ~= \".yml\" || ${File.Extension} ~= \".md\""
-          ]
+          "description": "Send path"
         }
       ]
     },
@@ -40,11 +32,7 @@
       "inputTypes": [
         {
           "name": "Photo",
-          "kind": "Photo",
-          "where": {
-              "extension": [
-               ".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp", ".svg"]
-          }
+          "kind": "Photo"
         }
       ],
       "outputTypes": [],
@@ -55,10 +43,7 @@
       "inputCombinations": [
         {
           "inputs": ["Photo"],
-          "description": "Send path",
-          "where": [
-            "${Photo.Extension} ~= \".png\" || ${Photo.Extension} ~= \".jpg\" || ${Photo.Extension} ~= \".jpeg\" || ${Photo.Extension} ~= \".gif\" || ${Photo.Extension} ~= \".bmp\" || ${Photo.Extension} ~= \".webp\" || ${Photo.Extension} ~= \".svg\""
-          ]
+          "description": "Send path"
         }
       ]
     },
@@ -70,12 +55,7 @@
       "inputTypes": [
         {
           "name": "Document",
-          "kind": "Document",
-          "where": {
-              "extension": [
-                ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx",".csv"
-             ]
-          }
+          "kind": "Document"
         }
       ],
       "outputTypes": [],
@@ -86,10 +66,7 @@
       "inputCombinations": [
         {
           "inputs": ["Document"],
-          "description": "Send path",
-          "where": [
-            "${Document.Extension} ~= \".pdf\" || ${Document.Extension} ~= \".doc\" || ${Document.Extension} ~= \".docx\" || ${Document.Extension} ~= \".xls\" || ${Document.Extension} ~= \".xlsx\" || ${Document.Extension} ~= \".ppt\" || ${Document.Extension} ~= \".pptx\" || ${Document.Extension} ~= \".csv\""
-          ]
+          "description": "Send path"
         }
       ]
     }
