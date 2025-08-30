@@ -25,29 +25,6 @@
       ]
     },
     {
-      "name": "Manus.Action.CreateWebsiteByPhoto",
-      "description": "create a website with Manus",
-      "icon": "ms-resource://Files/assets/StoreLogo.png",
-      "kind": "Update",
-      "inputTypes": [
-        {
-          "name": "Photo",
-          "kind": "Photo"
-        }
-      ],
-      "outputTypes": [],
-      "invocation": {
-        "type": "Uri",
-        "uri": "manus://create-website?filePath=${Photo.Path}"
-      },
-      "inputCombinations": [
-        {
-          "inputs": ["Photo"],
-          "description": "Send path"
-        }
-      ]
-    },
-    {
       "name": "Manus.Action.CreateWebsiteByDocument",
       "description": "create a website with Manus",
       "icon": "ms-resource://Files/assets/StoreLogo.png",
